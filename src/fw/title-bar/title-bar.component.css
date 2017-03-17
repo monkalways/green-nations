@@ -1,0 +1,17 @@
+
+:host {
+    display: flex;
+}
+
+.title-bar {
+    flex-grow: 1;
+    display: flex; /* make .title-bar a flexbox itself */
+    min-height: 80px;
+}
+
+.menu-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-right: 20px;
+}
