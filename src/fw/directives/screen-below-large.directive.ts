@@ -1,11 +1,11 @@
-import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef, OnInit } from '@angular/core';
 
 import { ScreenService } from '../services/screen.service';
 import { Subscription } from 'rxjs/Subscription';
 
 // tslint:disable-next-line:directive-selector
 @Directive({selector: '[screenBelowLarge]'})
-export class ScreenBelowLargeDirective implements OnDestroy {
+export class ScreenBelowLargeDirective implements OnInit, OnDestroy {
   private hasView = false;
   private screenSubscription: Subscription;
 
@@ -15,6 +15,10 @@ export class ScreenBelowLargeDirective implements OnDestroy {
 
     this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
 
+  }
+
+  ngOnInit() {
+    this.onResize();
   }
 
   ngOnDestroy() {
