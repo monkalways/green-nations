@@ -16,7 +16,8 @@ import { FwModule } from '../fw/fw.module';
     HttpModule,
     FwModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
