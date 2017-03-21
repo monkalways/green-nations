@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuItem } from '../../services/menu.service';
+import { MenuItem, MenuService } from '../../services/menu.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -11,7 +11,7 @@ export class MenuItemComponent implements OnInit {
 
   @Input() item = <MenuItem> null;
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
   }
